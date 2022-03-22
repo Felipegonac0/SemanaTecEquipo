@@ -47,6 +47,8 @@ def move():
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
+        food.x = randrange(-15, 15) * 10
+        food.y = randrange(-15, 15) * 10
 
     clear()
 
