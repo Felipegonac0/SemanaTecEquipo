@@ -13,6 +13,7 @@ from turtle import *
 
 from freegames import square, vector
 
+from random import randint 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
@@ -52,10 +53,40 @@ def move():
 
     clear()
 
-    for body in snake:
-        square(body.x, body.y, 9, 'black')
+    snakecol = ''
+    foodcol = ''
+    snakecolnum = randint(1,5)
+    foodcolnum = randint(1,5)
+    
+    while snakecolnum == foodcolnum:
+        foodcolnum = randint(1,5)
 
-    square(food.x, food.y, 9, 'green')
+    if snakecolnum == 1:
+        snakecol = 'green'
+    elif snakecolnum == 2:
+        snakecol = 'blue'
+    elif snakecolnum == 3:
+        snakecol = 'black'
+    elif snakecolnum == 4:
+        snakecol = 'yellow'
+    elif snakecolnum == 5:
+        snakecol = 'purple'
+    
+    if foodcolnum == 1:
+        foodcol = 'green'
+    elif foodcolnum == 2:
+        foodcol = 'blue'
+    elif foodcolnum == 3:
+        foodcol = 'black'
+    elif foodcolnum == 4:
+        foodcol = 'yellow'
+    elif foodcolnum == 5:
+        foodcol = 'purple'
+
+    for body in snake:
+        square(body.x, body.y, 9, snakecol)
+
+    square(food.x, food.y, 9, foodcol)
     update()
     ontimer(move, 100)
 
