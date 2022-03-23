@@ -48,6 +48,7 @@ def move():
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
+        "se agregó estas dos lineas que simulan el movimiento aleatorio de la comida"
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
 
