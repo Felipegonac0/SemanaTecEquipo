@@ -57,7 +57,8 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+            goto(target.x, target.y)
+
 
     ontimer(move, 50)
 
