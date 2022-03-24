@@ -68,6 +68,7 @@ def draw():
 
     update()
     ontimer(draw, 100)
+writer.goto(160, 160)
 writer.write(clicks['score'])
 shuffle(tiles)
 setup(420, 420, 370, 0)
