@@ -6,8 +6,6 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
-writer = Turtle(visible=False)
-clicks = {'score': 0}
 def square(x, y):
     "Draw white square with black outline at (x, y)."
     up()
@@ -32,18 +30,17 @@ def tap(x, y):
     "Update mark and hidden tiles based on tap."
     spot = index(x, y)
     mark = state['mark']
-    writer.write(clicks['score'])
-    #state['mark'] += 1
+    
 
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
-        clicks['score'] += 1
+        
     else:
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
         
-        clicks['score'] += 1
+        
 
 def draw():
     "Draw image and tiles."
@@ -68,8 +65,8 @@ def draw():
 
     update()
     ontimer(draw, 100)
-writer.goto(160, 160)
-writer.write(clicks['score'])
+
+
 shuffle(tiles)
 setup(420, 420, 370, 0)
 addshape(car)
