@@ -127,7 +127,7 @@ def move():
         square(x, y)
 
     up()
-    goto(pacman.x + 10, pacman.y + 10)
+    goto(pacman.x + 2, pacman.y + 2)
     dot(20, 'yellow')
 
     for point, course in ghosts:
