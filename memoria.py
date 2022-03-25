@@ -5,13 +5,16 @@ from freegames import path
 car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
-hide = [True] * 64
 writer = Turtle(visible=False)
 clicks = {'score': 0}
+<<<<<<< HEAD
 
 if hide == [False] * 64:
     quit()
 
+=======
+hide = [True] * 64
+>>>>>>> 9610e268a6b355d1fe8ec55ecda87f0924c6809e
 def square(x, y):
     "Draw white square with black outline at (x, y)."
     up()
@@ -37,17 +40,18 @@ def tap(x, y):
     spot = index(x, y)
     mark = state['mark']
     writer.write(clicks['score'])
-    #state['mark'] += 1
 
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
         clicks['score'] += 1
+        
     else:
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-        
         clicks['score'] += 1
+        
+        
 
 def draw():
     "Draw image and tiles."
