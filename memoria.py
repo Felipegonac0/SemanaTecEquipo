@@ -8,6 +8,10 @@ state = {'mark': None}
 hide = [True] * 64
 writer = Turtle(visible=False)
 clicks = {'score': 0}
+
+if hide == [False] * 64:
+    quit()
+
 def square(x, y):
     "Draw white square with black outline at (x, y)."
     up()
