@@ -7,14 +7,12 @@ tiles = list(range(32)) * 2
 state = {'mark': None}
 writer = Turtle(visible=False)
 clicks = {'score': 0}
-<<<<<<< HEAD
+
+hide = [True] * 64
 
 if hide == [False] * 64:
     quit()
 
-=======
-hide = [True] * 64
->>>>>>> 9610e268a6b355d1fe8ec55ecda87f0924c6809e
 def square(x, y):
     "Draw white square with black outline at (x, y)."
     up()
